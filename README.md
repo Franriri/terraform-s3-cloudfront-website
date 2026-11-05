@@ -79,7 +79,7 @@ The destroy finished with **6 destroyed**. Deleting a CloudFront distribution to
 ## Next steps
 
 - [ ] Look up the cache policy by name with a Terraform data source, so no ID is typed by hand
-- [ ] Add a GitHub Actions workflow to check the code automatically
+- [x] Add a GitHub Actions workflow to check the code automatically
 - [ ] Practice remote state storage
 
 ---
