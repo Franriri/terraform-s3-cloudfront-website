@@ -1,5 +1,5 @@
 # Terraform: Secure Static Website (S3 + CloudFront)
-
+![Terraform check](https://github.com/Franriri/terraform-s3-cloudfront-website/actions/workflows/terraform-check.yml/badge.svg)
 My full static website on AWS, written as **Infrastructure as Code** with Terraform. One command builds a private S3 bucket, a CloudFront distribution, and the permissions that connect them. One command removes everything.
 
 This is the code version of a site I first built by hand in the AWS console. See my companion projects: **aws-s3-cloudfront-static-site** (manual build) and **terraform-private-s3-bucket** (my first Terraform bucket).
