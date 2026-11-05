@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fran’s Cloud Journey</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef4f7; --card:#ffffff; --ink:#12263a; --muted:#4d6275;
+  --sea:#1f6f8b; --sun:#f2a541; --line:#c9d8e2; --done:#2f8f5b;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1c28; --card:#172a3b; --ink:#e8f1f7; --muted:#9db3c4;
+    --sea:#6cc3e0; --sun:#f5b558; --line:#2a4258; --done:#58c58b;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.65}
+main{max-width:720px;margin:0 auto;padding:clamp(1.5rem,5vw,3.5rem) 1.25rem 4rem}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.5rem;font-weight:700;margin-bottom:1.25rem}
+p{margin:0 0 1rem;max-width:62ch}
+
+.ticket{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:1.5rem 1.5rem 1.75rem;position:relative}
+.ticket-head{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--display);font-size:.95rem;color:var(--muted);border-bottom:2px dashed var(--line);padding-bottom:.9rem;margin-bottom:1.25rem}
+.status{color:var(--ink);font-weight:700}
+.status::before{content:"";display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--sun);margin-right:.45rem}
+.lead{font-size:1.25rem;margin-top:1rem}
+
+section{margin-top:3rem}
+
+.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--line);margin-left:.6rem}
+.timeline li{position:relative;padding:0 0 1.75rem 1.5rem}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-.62rem;top:.35rem;width:1.05rem;height:1.05rem;border-radius:50%;background:var(--bg);border:3px solid var(--line)}
+.timeline li.done::before{background:var(--done);border-color:var(--done)}
+.timeline li.now::before{background:var(--sun);border-color:var(--sun)}
+.timeline h3{font-size:1.15rem;font-weight:700}
+.tag{font-family:var(--display);font-size:.85rem;font-weight:700;color:var(--muted);margin-left:.5rem}
+.timeline li.done .tag{color:var(--done)}
+.timeline li.now .tag{color:var(--sea)}
+.timeline p{color:var(--muted);margin:.25rem 0 0;font-size:1.05rem}
+
+.reminder{background:var(--ink);color:var(--bg);border-radius:14px;padding:1.75rem 1.5rem}
+.reminder blockquote{margin:0 0 1.25rem;font-size:1.35rem;font-style:italic;min-height:4.5em}
+button{font-family:var(--display);font-size:1rem;font-weight:700;background:var(--sun);color:#12263a;border:0;border-radius:999px;padding:.7rem 1.4rem;cursor:pointer}
+button:hover{filter:brightness(1.05)}
+:focus-visible{outline:3px solid var(--sea);outline-offset:3px}
+.reminder button:focus-visible{outline-color:#fff}
+
+.stack{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin:0;list-style:none}
+.stack li{font-family:var(--display);font-weight:500;font-size:.95rem;border:2px solid var(--line);background:var(--card);border-radius:999px;padding:.35rem .95rem}
+
+footer{margin-top:4rem;padding-top:1.5rem;border-top:2px dashed var(--line);color:var(--muted);font-size:1rem}
+.sig{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--ink);margin:0 0 .25rem}
+@media (prefers-reduced-motion:no-preference){
+  .ticket{animation:rise .6s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="ticket">
+    <div class="ticket-head">
+      <span>Ticket CLOUD-001</span>
+      <span class="status">Status: In progress</span>
+    </div>
+    <h1>Fran’s cloud journey</h1>
+    <p class="lead">Eight years of solving problems for other people. Now I’m building the systems that keep them running.</p>
+  </header>
+
+  <section aria-labelledby="path">
+    <h2 id="path">The path so far</h2>
+    <ol class="timeline">
+      <li class="done">
+        <h3>Service desk specialist<span class="tag">Done: 8+ years</span></h3>
+        <p>Triage, troubleshooting, and staying calm when everything is on fire. This is the foundation.</p>
+      </li>
+      <li class="now">
+        <h3>Networking and cloud fundamentals<span class="tag">In progress</span></h3>
+        <p>TCP/IP, DNS, Linux, and my first AWS project: this very page, hosted in the cloud.</p>
+      </li>
+      <li>
+        <h3>First cloud certification<span class="tag">Next</span></h3>
+        <p>A recognised proof of what I can already do with my hands.</p>
+      </li>
+      <li>
+        <h3>Automation and AI<span class="tag">Next</span></h3>
+        <p>Python, Terraform, and small tools that remove repetitive work.</p>
+      </li>
+      <li>
+        <h3>Cloud engineer<span class="tag">Goal</span></h3>
+        <p>Ticket closed. A new one opens, and it is a bigger one.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="remind">
+    <h2 id="remind">Read this when it gets hard</h2>
+    <div class="reminder">
+      <blockquote id="msg" aria-live="polite">Every expert you admire once opened a console and felt completely lost. You are doing the exact thing they did.</blockquote>
+      <button id="next" type="button">Show another reminder</button>
+    </div>
+  </section>
+
+  <section aria-labelledby="tools">
+    <h2 id="tools">What I’m building with</h2>
+    <ul class="stack">
+      <li>AWS S3</li><li>CloudFront</li><li>IAM</li><li>Linux</li>
+      <li>Networking</li><li>Python</li><li>Terraform</li><li>GitHub</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="sig">Crafted by Claude</p>
+    <p>Written on day one of Fran’s cloud journey, November 2026. Come back and read this whenever you need a push.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var lines=[
+    "Every expert you admire once opened a console and felt completely lost. You are doing the exact thing they did.",
+    "Eight years of fixing real problems under pressure is not a detour. It is your head start.",
+    "You don’t need to learn everything today. One small project, finished, beats ten courses half watched.",
+    "A broken build is just a ticket you haven’t resolved yet, and resolving tickets is what you do best.",
+    "Progress is quiet. Keep showing up, and one day you will look back at this page and smile.",
+    "The cloud is just someone else’s computers, and you already know how to support computers. Keep going."
+  ];
+  var i=0, msg=document.getElementById("msg"), btn=document.getElementById("next");
+  btn.addEventListener("click",function(){
+    i=(i+1)%lines.length;
+    msg.textContent=lines[i];
+  });
+})();
+</script>
+</body>
+</html>
